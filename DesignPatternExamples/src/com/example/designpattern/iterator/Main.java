@@ -1,7 +1,29 @@
 package com.example.designpattern.iterator;
 
+interface Iterator<E>{
+boolean hasNext();
+	E next();
+	void remove();
+}
+
+interface Iterable<T>{
+Iterator<T> iterator();
+}
+
+class ThreeIntegers implements Iterable<Integer>{
+	Iterator<Integer> iterator(){
+return new MyIterator<Integer>();
+	}
+}
+
+class ThreeIntegers implements Iterator<Integer>{
+	ThreeIntegers c;
+	public MyIterator(ThreeIntegers c){
+	}
+}
+	
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
 
         // Iterator 패턴을 직접 사용하면
 		ThreeIntegers c = new ThreeIntegers(5,1,7);
