@@ -12,8 +12,7 @@ public class Sleep implements State {
 
 	@Override
 	public void off_button(Light light) {
-  
-  light.setState( new OFF());
+                light.setState( new OFF());
 	}
 
 }
