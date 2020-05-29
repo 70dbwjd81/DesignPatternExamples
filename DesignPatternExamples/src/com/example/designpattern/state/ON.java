@@ -10,5 +10,10 @@ public class ON implements State {
 	public void off_button(Light light) {
 		light.setState( new OFF() );
 	}
+	
+	@Override
+	public void on_button(Light light) {
+		light.setState(new Sleep());
+	}
 
 }
